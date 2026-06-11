@@ -89,14 +89,24 @@ const createTables = async () => {
   // Seed experience
   await pool.query(`DELETE FROM experience`);
   await pool.query(`
-    INSERT INTO experience (role, company, period, description, sort_order) VALUES
-    (
-      'Full Stack Developer',
-      'Xentrix Hitteck Pvt. Limited',
-      'Current',
-      'Building and maintaining production-grade web applications including an enterprise insurance management platform. Working across the full stack — React frontends, Node/Express APIs, and PostgreSQL databases.',
-      1
-    );
+      INSERT INTO experience (
+        role,
+        company,
+        period,
+        description,
+        technologies,
+        achievements,
+        sort_order
+      )
+      VALUES (
+        'Full Stack Developer',
+        'Xentrix Hitteck Pvt. Limited',
+        'Jan 2024 - Present (2.5 Years)',
+        'Developing and maintaining enterprise-scale insurance management applications. Responsible for frontend development, backend APIs, database design, and deployment activities.',
+        'React.js, Redux, JavaScript, Node.js, Express.js, PostgreSQL, Git, REST APIs',
+        'Built insurance policy management modules, optimized API performance, developed reusable React components, and collaborated with cross-functional teams.',
+        1
+      );
   `);
 
   console.log("✅ Seed data inserted");
